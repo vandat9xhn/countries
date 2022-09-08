@@ -1,0 +1,40 @@
+.FilterBar {
+  position: relative;
+  width: 185px;
+  font-size: 15px;
+  &:hover {
+    .FilterBar_list {
+      display: block;
+    }
+  }
+}
+
+.FilterBar_select{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bg-element);
+  cursor: pointer;
+}
+
+.FilterBar_hr{
+  height: 4px;
+}
+
+.FilterBar_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  
+  width: 100%;
+  padding: 15px 0px;
+  border-radius: 10px;
+  background-color: var(--bg-element);
+}
+
+.FilterItem {
+ padding: 5px 20px;
+  &:hover {
+    opacity: 0.75;
+  }
+}

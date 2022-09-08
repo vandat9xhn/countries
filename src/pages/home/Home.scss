@@ -1,0 +1,31 @@
+//
+$pd_country: 35;
+
+//
+
+.Home {
+  padding: 45px 0;
+}
+
+.Home_contain {
+  margin: auto;
+  width: var(--max-width);
+}
+
+// 
+.HomeHome_search_filter{
+  margin-bottom: 45px;
+}
+
+.Home_search{
+  width: 445px;
+}
+
+// 
+.Home_countries {
+  margin: 0 -#{$pd_country}px;
+}
+.Home_country {
+  width: 25%;
+  padding: #{$pd_country}px;
+}

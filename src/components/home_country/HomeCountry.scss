@@ -1,0 +1,30 @@
+.HomeCountry{
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--bg-element);
+  box-shadow: 0 0 4px 0px rgba(128, 128, 128, 0.25);
+  text-decoration: none;
+}
+
+.HomeCountry_top{
+  padding-top: 60%;
+}
+
+.HomeCountry_content{
+  padding: 25px 25px 35px 25px;
+}
+
+.HomeCountry_name{
+  margin-bottom: 15px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.HomeCountry_info{
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.HomeCountry_label{
+  font-weight: 600;
+}

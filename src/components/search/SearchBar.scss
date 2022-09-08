@@ -1,0 +1,19 @@
+.SearchBar{
+  border-radius: 6px;
+  background-color: var(--bg-element);
+}
+
+.SearchBar_left{
+  width: 60px;
+  padding-left: 10px;
+
+  &:hover{
+    opacity: 0.75;
+  }
+}
+
+.SearchBar_ip{
+  width: 100%;
+  padding: 20px 10px;
+  background-color: transparent;
+}

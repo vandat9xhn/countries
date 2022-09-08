@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --width: 1440px;
+  --max-width: 1200px;
+
+  &.device-mobile {
+    --width: 375px;
+  }
+
+  //
+  &[data-theme="dark"] {
+    --bg-main: hsl(207, 26%, 17%);
+    --bg-element: hsl(209, 23%, 22%);
+    --color: #d3d2d2;
+
+    --box-shadow-around: rgb(49 49 49 / 25%);
+  }
+
+  &[data-theme="light"] {
+    --bg-main: hsl(0, 0%, 98%);
+    --bg-element: white;
+    --color: hsl(200, 15%, 8%);
+    --bg-input: hsl(0, 0%, 52%);
+
+    --box-shadow-around: rgba(128, 128, 128, 0.25);
+  }
+}
+
+body {
+  @font-face {
+    font-family: Nunito Sans;
+    src: url(https://fonts.google.com/specimen/Nunito+Sans);
+  }
+
+  margin: 0;
+  background-color: var(--bg-main);
+  font-family: Nunito Sans;
+  color: var(--color);
+}
+
+input {
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+img {
+  vertical-align: middle;
+}
+
+// ----
+
+$weights: 300, 600, 800;
+
+@each $weight in $weights {
+  .font-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+//
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.grow-1 {
+  flex-grow: 1;
+}
+
+//
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs-100per {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+//
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.color-inherit {
+  color: inherit;
+}
+
+//
+.box-shadow-around {
+  box-shadow: 0 0 6px 0px var(--box-shadow-around);
+}
+
+// ----
+
+.App {
+  width: var(--width);
+  max-width: 100%;
+}

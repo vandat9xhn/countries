@@ -1,0 +1,23 @@
+.Header {
+  background-color: var(--bg-element);
+  box-shadow: 0 1px 4px 0px rgba(128, 128, 128, 0.25);
+}
+
+.Header_row {
+  margin: auto;
+  width: var(--max-width);
+  height: 75px;
+}
+
+.Header_title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.Header_mode {
+  font-weight: 600;
+}
+
+.Header_mode_img {
+  margin-right: 5px;
+}
