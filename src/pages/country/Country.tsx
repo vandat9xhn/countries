@@ -1,8 +1,9 @@
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { default_obj_country_from_list } from "../../default/country";
+// import { default_obj_country_from_list } from "../../default/country";
 import { ObjCountry } from "../../types";
+import { API_Country_R } from "../../api/countries";
 
 import "./Country.scss";
 
@@ -29,6 +30,7 @@ export interface CountryProps {}
 function Country({}: CountryProps) {
   //
   const { name_country } = useParams();
+  const navigate = useNavigate();
 
   //
   const [country, setCountry] = React.useState<ObjCountry>(null);
@@ -41,8 +43,12 @@ function Country({}: CountryProps) {
   // ---
 
   const getCountry = async () => {
-    console.log(name_country);
-    setCountry(default_obj_country_from_list);
+    const res = await API_Country_R(name_country);
+    setCountry(res.data[0])
+  };
+
+  const handleBack = () => {
+    navigate(-1);
   };
 
   // -----
@@ -54,7 +60,9 @@ function Country({}: CountryProps) {
   //
   return (
     <div className="Country">
-      <div className="Country_back shadow-25">Back</div>
+      <div className="Country_back shadow-25" onClick={handleBack}>
+        Back
+      </div>
 
       <div className="Country_row flex items-center space-between">
         <div className="Country_left Country_col">
@@ -73,7 +81,7 @@ function Country({}: CountryProps) {
               {[
                 {
                   title: "Native Name",
-                  value: country.name.nativeName.fin.official,
+                  value: country.altSpellings[1],
                 },
                 { title: "Population", value: country.population },
                 { title: "Region", value: country.region },
@@ -86,31 +94,33 @@ function Country({}: CountryProps) {
 
             <div className="Country_right_col Country_right_right">
               {[
-                { title: "Top Level Domain", value: "" },
-                { title: "Currencies", value: country.currencies.EUR.name },
-                { title: "Languages", value: country.languages.fin },
+                { title: "Top Level Domain", value: country.tld[0] },
+                { title: "Currencies", value: country.cioc },
+                {
+                  title: "Languages",
+                  value: Object.values(country.languages)[0],
+                },
               ].map((item, ix) => (
                 <CountryTitleValue key={item.title} {...item} />
               ))}
             </div>
           </div>
 
-          <div className="Country_borders flex items-center">
-            <div className="Country_borders_title font-600">
-              Borders Countries:
-            </div>
+          {!country.borders ? null : (
+            <div className="Country_borders flex items-center">
+              <div className="Country_borders_title font-600">
+                Borders Countries:
+              </div>
 
-            <div className="flex">
-              {country.borders.map((item, ix) => (
-                <div
-                  key={item}
-                  className="Country_borders_item shadow-25"
-                >
-                  {item}
-                </div>
-              ))}
+              <div className="flex flex-wrap">
+                {country.borders.map((item, ix) => (
+                  <div key={item} className="Country_borders_item shadow-25">
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 import icon_moon from "../../../images/icon_moon.png";
 import icon_moon_light from "../../../images/icon_moon_light.png";
@@ -26,7 +27,9 @@ function Header({}: HeaderProps) {
   return (
     <div className="Header">
       <div className="Header_row flex space-between items-center">
-        <div className="Header_title">Where in the world?</div>
+        <Link className="Header_title display-block" to={"/"}>
+          Where in the world?
+        </Link>
 
         <div
           className="Header_mode flex items-center cursor-pointer"
