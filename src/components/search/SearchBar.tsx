@@ -34,7 +34,7 @@ function SearchBar({ handleSearch }: SearchBarProps) {
 
   //
   return (
-    <div className="SearchBar flex box-shadow-around">
+    <div className="SearchBar flex shadow-25">
       <div
         className="SearchBar_left flex items-center justify-center cursor-pointer"
         onClick={onSearch}

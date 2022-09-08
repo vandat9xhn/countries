@@ -47,7 +47,7 @@ function Home({}: HomeProps) {
             <SearchBar handleSearch={handleSearch} />
           </div>
 
-          <div>
+          <div className="Home_filter">
             <FilterBar handleFilter={handleFilter} />
           </div>
         </div>

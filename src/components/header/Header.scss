@@ -1,12 +1,13 @@
 .Header {
+  height: 75px;
   background-color: var(--bg-element);
-  box-shadow: 0 1px 4px 0px rgba(128, 128, 128, 0.25);
+  box-shadow: 0 1px 4px 0px var(--shadow-25);
 }
 
 .Header_row {
   margin: auto;
   width: var(--max-width);
-  height: 75px;
+  height: 100%;
 }
 
 .Header_title {
@@ -20,4 +21,21 @@
 
 .Header_mode_img {
   margin-right: 5px;
+}
+
+// -----
+
+.device-mobile {
+  .Header {
+    // height: 50px;
+    padding: 0px 15px;
+  }
+
+  .Header_title {
+    font-size: 17px;
+  }
+
+  .Header_mode {
+    font-size: 15px;
+  }
 }

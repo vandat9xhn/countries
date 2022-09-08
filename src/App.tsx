@@ -42,11 +42,11 @@ function App({}: AppProps) {
         </div>
 
         <div className="display-noe">
-          <img style={{ width: "100%" }} src={detail_pc} alt="" />
+          {/* <img style={{ width: "100%" }} src={detail_pc} alt="" /> */}
           {/* <img style={{ width: "100%" }} src={home_pc} alt="" /> */}
 
-          {/* <img src={detail_mb} alt="" /> */}
-          {/* <img src={home_mb} alt="" /> */}
+          <img style={{ width: "100%" }} src={detail_mb} alt="" />
+          {/* <img style={{ width: "100%" }} src={home_mb} alt="" /> */}
         </div>
       </div>
     </BrowserRouter>

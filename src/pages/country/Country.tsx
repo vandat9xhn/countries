@@ -54,19 +54,19 @@ function Country({}: CountryProps) {
   //
   return (
     <div className="Country">
-      <div className="Country_back box-shadow-around">Back</div>
+      <div className="Country_back shadow-25">Back</div>
 
       <div className="Country_row flex items-center space-between">
         <div className="Country_left Country_col">
           <img
-            className="Country_img object-fit-cover"
+            className="Country_img object-fit-cover shadow-25"
             src={country.flags.png}
             alt=""
           />
         </div>
 
         <div className="Country_right Country_col">
-          <div className="flex items-center space-between">
+          <div className="Country_right_row flex items-center space-between">
             <div className="Country_right_col Country_right_left">
               <div className="Country_name">{country.name.common}</div>
 
@@ -100,11 +100,16 @@ function Country({}: CountryProps) {
               Borders Countries:
             </div>
 
-            {country.borders.map((item, ix) => (
-              <div key={item} className="Country_borders_item box-shadow-around">
-                {item}
-              </div>
-            ))}
+            <div className="flex">
+              {country.borders.map((item, ix) => (
+                <div
+                  key={item}
+                  className="Country_borders_item shadow-25"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

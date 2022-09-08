@@ -37,7 +37,7 @@ function FilterBar({ handleFilter }: FilterBarProps) {
   //
   return (
     <div className="FilterBar">
-      <div className="FilterBar_select flex space-between items-center box-shadow-around">
+      <div className="FilterBar_select flex space-between items-center shadow-25">
         <div>{"Filter by Region"}</div>
 
         <img src={icon_down} alt="" />
@@ -45,7 +45,7 @@ function FilterBar({ handleFilter }: FilterBarProps) {
 
       <div className="FilterBar_hr"></div>
 
-      <div className="FilterBar_list display-none box-shadow-around">
+      <div className="FilterBar_list display-none shadow-25">
         {ARR_REGION.map((item, ix) => (
           <FilterItem key={item} region={item} handleFilter={handleFilter} />
         ))}
