@@ -29,24 +29,28 @@ const FilterItem = ({
 
 //
 export interface FilterBarProps {
+  region: string;
   handleFilter: handleFilterType;
 }
 
 //
-function FilterBar({ handleFilter }: FilterBarProps) {
+function FilterBar({ region, handleFilter }: FilterBarProps) {
+  //
+  const arr_region = ARR_REGION.filter((item) => item !== region);
+
   //
   return (
     <div className="FilterBar">
       <div className="FilterBar_select flex space-between items-center shadow-25">
-        <div>{"Filter by Region"}</div>
+        <div>{region === "all" ? "Filter by Region" : region}</div>
 
-        <img src={icon_down} alt="" />
+        <img className="FilterBar_icon" src={icon_down} alt="" />
       </div>
 
       <div className="FilterBar_hr"></div>
 
       <div className="FilterBar_list display-none shadow-25">
-        {ARR_REGION.map((item, ix) => (
+        {arr_region.map((item, ix) => (
           <FilterItem key={item} region={item} handleFilter={handleFilter} />
         ))}
       </div>

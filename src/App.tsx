@@ -1,14 +1,14 @@
 import * as React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { IS_MOBILE } from "./constant";
 import "./styles/main.scss";
 
-import detail_pc from "../design/desktop-design-detail-light.jpg";
-import home_pc from "../design/desktop-design-home-dark.jpg";
+// import detail_pc from "../design/desktop-design-detail-light.jpg";
+// import home_pc from "../design/desktop-design-home-dark.jpg";
 
-import detail_mb from "../design/mobile-design-detail-dark.jpg";
-import home_mb from "../design/mobile-design-home-dark.jpg";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import detail_mb from "../design/mobile-design-detail-dark.jpg";
+// import home_mb from "../design/mobile-design-home-dark.jpg";
 import Home from "./pages/home/Home";
 import Country from "./pages/country/Country";
 import Header from "./components/header/Header";

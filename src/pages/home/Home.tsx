@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { default_obj_country_from_list } from "../../default/country";
+// import { default_obj_country_from_list } from "../../default/country";
 import { ObjCountry } from "../../types";
 
 import { API_CountryAll_L, API_CountryRegion_L } from "../../api/countries";
@@ -18,6 +18,7 @@ export interface HomeProps {}
 function Home({}: HomeProps) {
   //
   const [arr_country, setArrCountry] = React.useState<ObjCountry[]>([]);
+  const [region, setRegion] = React.useState("all");
   const [fetching, setFetching] = React.useState(false);
 
   //
@@ -38,9 +39,13 @@ function Home({}: HomeProps) {
     console.log(value);
   };
 
-  const handleFilter = async (region: string) => {
+  const handleFilter = async (_region: string) => {
     setFetching(true);
-    const res = await API_CountryRegion_L(region);
+    setRegion(_region);
+    const res =
+      _region === "all"
+        ? await API_CountryAll_L()
+        : await API_CountryRegion_L(_region);
     setArrCountry(res.data.slice(0, 8));
     setFetching(false);
   };
@@ -55,7 +60,7 @@ function Home({}: HomeProps) {
           </div>
 
           <div className="Home_filter">
-            <FilterBar handleFilter={handleFilter} />
+            <FilterBar region={region} handleFilter={handleFilter} />
           </div>
         </div>
 
